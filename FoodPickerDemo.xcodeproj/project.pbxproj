@@ -14,6 +14,9 @@
 		CAAF92F7262390A0006CDE87 /* FoodPickerDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CAAF92F5262390A0006CDE87 /* FoodPickerDemo.xcdatamodeld */; };
 		CAAF92F9262390A2006CDE87 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAAF92F8262390A2006CDE87 /* Assets.xcassets */; };
 		CAAF92FC262390A2006CDE87 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAAF92FA262390A2006CDE87 /* LaunchScreen.storyboard */; };
+		CAAF9306262393C1006CDE87 /* FoodItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAF9304262393C1006CDE87 /* FoodItem+CoreDataClass.swift */; };
+		CAAF9307262393C1006CDE87 /* FoodItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAF9305262393C1006CDE87 /* FoodItem+CoreDataProperties.swift */; };
+		CAAF930D262394E0006CDE87 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAF930C262394E0006CDE87 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,9 @@
 		CAAF92F8262390A2006CDE87 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CAAF92FB262390A2006CDE87 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CAAF92FD262390A2006CDE87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CAAF9304262393C1006CDE87 /* FoodItem+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FoodItem+CoreDataClass.swift"; sourceTree = "<group>"; };
+		CAAF9305262393C1006CDE87 /* FoodItem+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FoodItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		CAAF930C262394E0006CDE87 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,9 +64,11 @@
 		CAAF92EB262390A0006CDE87 /* FoodPickerDemo */ = {
 			isa = PBXGroup;
 			children = (
+				CAAF930A262393D2006CDE87 /* FoodItem */,
 				CAAF92EC262390A0006CDE87 /* AppDelegate.swift */,
 				CAAF92EE262390A0006CDE87 /* SceneDelegate.swift */,
 				CAAF92F0262390A0006CDE87 /* ViewController.swift */,
+				CAAF930C262394E0006CDE87 /* DetailViewController.swift */,
 				CAAF92F2262390A0006CDE87 /* Main.storyboard */,
 				CAAF92F8262390A2006CDE87 /* Assets.xcassets */,
 				CAAF92FA262390A2006CDE87 /* LaunchScreen.storyboard */,
@@ -68,6 +76,15 @@
 				CAAF92F5262390A0006CDE87 /* FoodPickerDemo.xcdatamodeld */,
 			);
 			path = FoodPickerDemo;
+			sourceTree = "<group>";
+		};
+		CAAF930A262393D2006CDE87 /* FoodItem */ = {
+			isa = PBXGroup;
+			children = (
+				CAAF9304262393C1006CDE87 /* FoodItem+CoreDataClass.swift */,
+				CAAF9305262393C1006CDE87 /* FoodItem+CoreDataProperties.swift */,
+			);
+			path = FoodItem;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,10 +157,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CAAF9307262393C1006CDE87 /* FoodItem+CoreDataProperties.swift in Sources */,
 				CAAF92F1262390A0006CDE87 /* ViewController.swift in Sources */,
+				CAAF9306262393C1006CDE87 /* FoodItem+CoreDataClass.swift in Sources */,
 				CAAF92ED262390A0006CDE87 /* AppDelegate.swift in Sources */,
 				CAAF92F7262390A0006CDE87 /* FoodPickerDemo.xcdatamodeld in Sources */,
 				CAAF92EF262390A0006CDE87 /* SceneDelegate.swift in Sources */,
+				CAAF930D262394E0006CDE87 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
