@@ -11,11 +11,6 @@ class DetailViewController: UIViewController {
     // passed from ViewController
     var item: FoodItem?
     
-    // Core Data is a frameowrk for managing an object graph. Can persist the object graph to disk. Core Data is not a database
-    // Object graph = collection of interconnected objects
-    // as! = forced conversion
-    // AppDelegate handles lifecycle events (ex. app being launcehd, backgrounded, foregrounded, receiving data)
-    // persistentContainer = NSPersistentContainer handles the creationg of the NSManagedObject model (managed object model), NSPersistentStoreCoordinator (persistent store coordinator), and the NSManagedObjectContext (managed object context)
     // use context to keep track of Core Data. Essentially how we can manipulate our persisted data
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
@@ -24,8 +19,11 @@ class DetailViewController: UIViewController {
         // Set the title of nav to the name of the item
         title = item?.name!
     }
-    
-    // Reference created from Main.storyBoard
+}
+
+//MARK: - Buttons
+
+extension DetailViewController {
     @IBAction func editPressed(_ sender: UIButton) {
         // create an alert popup
         let alert = UIAlertController(title: "Edit", message: "Update \(item?.name! ?? "item")", preferredStyle: .alert)
@@ -33,7 +31,6 @@ class DetailViewController: UIViewController {
         alert.textFields?.first?.text = item?.name
         alert.addAction(UIAlertAction(title: "Submit", style: .default){
             // creates a weak reference to self (DetailViewController) to avoid retain cycles
-            // retain cycle = the closure is retaining self and self is retaining the closure. Could cause memory leaks because memory is not being freed up
             [weak self] _ in
             // like if-let, guard let also unwraps optionals if they contain a value. In guard let, if the check fails, guard-let will exit the current function,loop or condition.
             guard let field = alert.textFields?.first, let newName = field.text, !newName.isEmpty else { return }
@@ -58,8 +55,11 @@ class DetailViewController: UIViewController {
         })
         present(alert, animated: true)
     }
-    
-    // Core Data
+}
+
+//MARK: - Core Data functions
+
+extension DetailViewController {
     func updateItem(item: FoodItem, newName: String) {
         item.name = newName
         
@@ -80,7 +80,4 @@ class DetailViewController: UIViewController {
             print("deleteItem Error")
         }
     }
-    
-    
 }
-

@@ -8,11 +8,6 @@
 import UIKit
 
 class ViewController: UITableViewController {
-    // Core Data is a frameowrk for managing an object graph. Can persist the object graph to disk. Core Data is not a database
-    // Object graph = collection of interconnected objects
-    // as! = forced conversion
-    // AppDelegate handles lifecycle events (ex. app being launcehd, backgrounded, foregrounded, receiving data)
-    // persistentContainer = NSPersistentContainer handles the creationg of the NSManagedObject model (managed object model), NSPersistentStoreCoordinator (persistent store coordinator), and the NSManagedObjectContext (managed object context)
     // use context to keep track of Core Data. Essentially how we can manipulate our persisted data
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
@@ -27,8 +22,17 @@ class ViewController: UITableViewController {
         getAllItems()
     }
     
-    // table view setup
+    override func viewWillAppear(_ animated: Bool) {
+        // Everytime this view appears, get the updated items
+        getAllItems()
+    }
     
+    
+}
+
+//MARK: - UITableViewDelegate and UITableViewDataSource
+
+extension ViewController {
     // The int that is sent from this function tells the UITableView how many rows it needs to have in a section
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return foods.count
@@ -55,13 +59,11 @@ class ViewController: UITableViewController {
             navigationController?.pushViewController(detailViewController, animated: true)
         }
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        // Everytime this view appears, get the updated items
-        getAllItems()
-    }
-    
-    // navbar items
+}
+
+//MARK: - Navbar Items
+
+extension ViewController {
     @objc func addTapped() {
         let alert = UIAlertController(title: "New Food", message: "Enter new food choice", preferredStyle: .alert)
         alert.addTextField(configurationHandler: nil)
@@ -85,8 +87,11 @@ class ViewController: UITableViewController {
         alert.addAction(UIAlertAction(title: "OK", style: .default))
         present(alert, animated: true)
     }
-    
-    // core data
+}
+
+//MARK: - Core Data Functions
+
+extension ViewController {
     func getAllItems() {
         do {
             foods = try context.fetch(FoodItem.fetchRequest())
@@ -111,7 +116,5 @@ class ViewController: UITableViewController {
             print("createItem Error")
         }
     }
-    
-    
 }
 

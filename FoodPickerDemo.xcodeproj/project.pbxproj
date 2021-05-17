@@ -45,6 +45,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CA8381042652FE89002357E2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CAAF930A262393D2006CDE87 /* FoodItem */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CA8381052652FE93002357E2 /* Data Model */ = {
+			isa = PBXGroup;
+			children = (
+				CAAF92F5262390A0006CDE87 /* FoodPickerDemo.xcdatamodeld */,
+			);
+			path = "Data Model";
+			sourceTree = "<group>";
+		};
+		CA8381062652FEA1002357E2 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CAAF92F0262390A0006CDE87 /* ViewController.swift */,
+				CAAF930C262394E0006CDE87 /* DetailViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		CA8381072652FEAD002357E2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CAAF92F2262390A0006CDE87 /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CA8381082652FECB002357E2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CAAF92F8262390A2006CDE87 /* Assets.xcassets */,
+				CAAF92FA262390A2006CDE87 /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		CAAF92E02623909F006CDE87 = {
 			isa = PBXGroup;
 			children = (
@@ -64,16 +106,14 @@
 		CAAF92EB262390A0006CDE87 /* FoodPickerDemo */ = {
 			isa = PBXGroup;
 			children = (
-				CAAF930A262393D2006CDE87 /* FoodItem */,
 				CAAF92EC262390A0006CDE87 /* AppDelegate.swift */,
 				CAAF92EE262390A0006CDE87 /* SceneDelegate.swift */,
-				CAAF92F0262390A0006CDE87 /* ViewController.swift */,
-				CAAF930C262394E0006CDE87 /* DetailViewController.swift */,
-				CAAF92F2262390A0006CDE87 /* Main.storyboard */,
-				CAAF92F8262390A2006CDE87 /* Assets.xcassets */,
-				CAAF92FA262390A2006CDE87 /* LaunchScreen.storyboard */,
+				CA8381052652FE93002357E2 /* Data Model */,
+				CA8381042652FE89002357E2 /* Models */,
+				CA8381072652FEAD002357E2 /* Views */,
+				CA8381062652FEA1002357E2 /* Controllers */,
+				CA8381082652FECB002357E2 /* Supporting Files */,
 				CAAF92FD262390A2006CDE87 /* Info.plist */,
-				CAAF92F5262390A0006CDE87 /* FoodPickerDemo.xcdatamodeld */,
 			);
 			path = FoodPickerDemo;
 			sourceTree = "<group>";
